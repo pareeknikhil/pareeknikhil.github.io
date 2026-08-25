@@ -118,6 +118,8 @@ canvas {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 auto;
+  overflow: visible;
   text-decoration: none;
   /* background: #ffffff; */
   /* border: 1px solid var(--rule);
@@ -138,8 +140,12 @@ canvas {
 
 .mark-lockup img {
   display: block;
-  height: clamp(44px, 5vw, 61px);
+  height: 44px;
   width: auto;
+  aspect-ratio: 823 / 255;
+  max-width: none;
+  object-fit: contain;
+  object-position: left center;
 }
 
 .mark-lockup .word-lock-dusk {
@@ -156,7 +162,8 @@ html.dusk-ink .mark-lockup .word-lock-dusk {
 
 .mark-lockup .mark-only {
   display: none;
-  height: 52px;
+  height: 44px;
+  aspect-ratio: 270 / 262;
 }
 
 .lane-cluster {
@@ -1334,7 +1341,7 @@ html.dusk-ink .copy-chip.is-copied {
   }
 
   .mark-lockup img {
-    height: clamp(36px, 8vw, 48px);
+    height: 40px;
   }
 
   .lane-pill {
@@ -2247,37 +2254,114 @@ a.room-card:hover {
 }
 
 .about-lockup {
-  --about-mark: min(196px, 40cqi);
-  --about-word: min(84px, 17cqi);
-  --about-gap: min(22px, 4.5cqi);
+  --about-mark: min(166px, 40cqi);
+  --about-word: min(54px, 17cqi);
+  --about-gap: min(18px, 5cqi);
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--about-gap);
-  min-height: var(--about-mark);
+  width: max-content;
   max-width: 100%;
-  transition: gap 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(-28px);
 }
 
-.about-mark-face {
+.about-mark-wrap {
+  position: relative;
   display: block;
   width: var(--about-mark);
-  height: auto;
   flex: 0 0 auto;
-  transform-origin: 50% 50%;
-  transform-style: preserve-3d;
-  backface-visibility: visible;
+  overflow: visible;
 }
 
-.about-mark-face.is-spinning {
-  animation: about-mark-spin 1.25s cubic-bezier(0.45, 0, 0.2, 1);
+.about-mark-face,
+.about-mark-spark {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 270 / 262;
+  max-width: none;
+  object-fit: contain;
+}
+
+.about-mark-spark {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  opacity: 0;
+  mix-blend-mode: screen;
+  filter: brightness(1.7) saturate(1.35);
+  mask-image: linear-gradient(
+    to top,
+    transparent 0%,
+    #fff 14%,
+    #fff 24%,
+    transparent 40%
+  );
+  mask-size: 100% 280%;
+  mask-repeat: no-repeat;
+  mask-position: 0 120%;
+  -webkit-mask-image: linear-gradient(
+    to top,
+    transparent 0%,
+    #fff 14%,
+    #fff 24%,
+    transparent 40%
+  );
+  -webkit-mask-size: 100% 280%;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: 0 120%;
+}
+
+.about-mark-spark.is-lit {
+  animation: about-tree-spark 1.15s cubic-bezier(0.33, 0, 0.2, 1) 1 forwards;
+}
+
+.about-tracer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 28px;
+  border-radius: 1px;
+  background: var(--brand-cyan);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.about-tracer.is-on {
+  opacity: 1;
+}
+
+.about-tracer.is-round {
+  border-radius: 50%;
+}
+
+.about-lockup.is-orbiting .about-caret-bar {
+  opacity: 0;
+  animation: none;
+}
+
+.about-word-slot {
+  position: absolute;
+  top: calc(100% + var(--about-gap));
+  left: 50%;
+  width: calc(var(--about-word) * 555 / 105);
+  max-width: 100cqi;
+  height: var(--about-word);
+  overflow: hidden;
+  transform: translateX(-50%);
+  pointer-events: none;
 }
 
 .about-word-clip {
   height: var(--about-word);
   width: 0;
   overflow: hidden;
-  flex: 0 0 auto;
 }
 
 .about-lockup.is-erasing .about-word-clip {
@@ -2320,21 +2404,24 @@ html.dusk-ink .about-word-mark {
   animation: about-caret 0.9s steps(1) infinite;
 }
 
-.about-lockup.is-rest {
-  gap: 0;
-}
-
 .about-lockup.is-rest .about-word-clip {
   width: 0;
   overflow: hidden;
 }
 
-@keyframes about-mark-spin {
-  from {
-    transform: rotateY(0deg);
+@keyframes about-tree-spark {
+  0% {
+    opacity: 0.2;
+    mask-position: 0 118%;
+    -webkit-mask-position: 0 118%;
   }
-  to {
-    transform: rotateY(360deg);
+  22% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    mask-position: 0 -18%;
+    -webkit-mask-position: 0 -18%;
   }
 }
 
@@ -2646,4 +2733,9 @@ html.dusk-ink .about-word-mark {
 }
 .footer-link {
   text-decoration: none;
+}
+
+html.dusk-ink .footer-link,
+html.dusk-ink .footer-link:visited {
+  color: #18e4e1;
 }

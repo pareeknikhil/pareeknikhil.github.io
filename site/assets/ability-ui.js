@@ -1,5 +1,5 @@
 const HUE_KEY = 'ability-hue-mode'
-const GITHUB_LIBRARY_URL = 'https://github.com/YOUR_GITHUB/ability'
+const GITHUB_LIBRARY_URL = 'https://github.com/pareeknikhil/emg-ability'
 
 const SEEK_LEAVES = [
   { title: 'Ability', file: 'index.html', blurb: 'Home' },
@@ -822,12 +822,14 @@ function pulseCommunityCanvas() {
 
 function playAboutLockup() {
   const lockup = document.querySelector('.about-lockup')
+  const wrap = document.querySelector('.about-mark-wrap')
   const mark = document.querySelector('.about-mark-face')
+  const tracer = document.querySelector('.about-tracer')
   const clip = document.querySelector('.about-word-clip')
   const word = document.querySelector('.about-word-mark')
   const letterNodes = [...document.querySelectorAll('.about-letter')]
   const caret = document.querySelector('.about-caret-bar')
-  if (!lockup || !mark || !clip || !word || !letterNodes.length) return
+  if (!lockup || !wrap || !mark || !tracer || !clip || !word || !letterNodes.length) return
 
   const wait = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms))
   const quiet = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -835,12 +837,6 @@ function playAboutLockup() {
   if (quiet) {
     lockup.classList.add('is-rest')
     return
-  }
-
-  const spin = () => {
-    mark.classList.remove('is-spinning')
-    void mark.offsetWidth
-    mark.classList.add('is-spinning')
   }
 
   letterNodes.forEach((node) => node.classList.add('is-on'))
@@ -856,7 +852,6 @@ function playAboutLockup() {
   const showLetters = (count) => {
     letterNodes.forEach((node, i) => node.classList.toggle('is-on', i < count))
     clip.style.width = count <= 0 ? '0px' : `${stops[count - 1]}px`
-    lockup.style.gap = count <= 0 ? '0px' : getComputedStyle(lockup).getPropertyValue('--about-gap').trim() || '22px'
     if (!caret) return
     if (count <= 0) {
       const first = letterNodes[0].getBBox()
@@ -871,27 +866,93 @@ function playAboutLockup() {
     caret.setAttribute('height', String(box.height))
   }
 
+  const sparkMark = async () => {
+    const spark = wrap.querySelector('.about-mark-spark')
+    showLetters(0)
+    clip.style.width = `${stops[0]}px`
+    if (caret) {
+      caret.style.animation = 'none'
+      caret.style.opacity = '1'
+    }
+    void clip.offsetWidth
+    const caretBox = caret.getBoundingClientRect()
+    const wrapBox = wrap.getBoundingClientRect()
+    const markBox = mark.getBoundingClientRect()
+    const barW = Math.max(3, caretBox.width)
+    const barH = Math.max(18, caretBox.height)
+    const caretCx = caretBox.left + caretBox.width / 2
+    const caretCy = caretBox.top + caretBox.height / 2
+    const ease = 'cubic-bezier(0.22, 1, 0.36, 1)'
+    const dot = 10
+
+    tracer.style.transition = 'none'
+    tracer.style.width = `${barW}px`
+    tracer.style.height = `${barH}px`
+    tracer.style.borderRadius = '1px'
+    tracer.style.transform = 'none'
+    tracer.style.left = `${caretCx - wrapBox.left - barW / 2}px`
+    tracer.style.top = `${caretCy - wrapBox.top - barH / 2}px`
+    tracer.style.opacity = '1'
+    tracer.classList.add('is-on')
+    void tracer.offsetWidth
+    lockup.classList.add('is-orbiting')
+    lockup.classList.remove('is-typing', 'is-erasing')
+    clip.style.width = '0px'
+
+    tracer.style.transition = `width 0.32s ${ease}, height 0.32s ${ease}, border-radius 0.32s ${ease}, left 0.32s ${ease}, top 0.32s ${ease}`
+    tracer.classList.add('is-round')
+    tracer.style.borderRadius = '50%'
+    tracer.style.width = `${dot}px`
+    tracer.style.height = `${dot}px`
+    tracer.style.left = `${caretCx - wrapBox.left - dot / 2}px`
+    tracer.style.top = `${caretCy - wrapBox.top - dot / 2}px`
+    await wait(340)
+
+    const node = 6
+    const rootX = markBox.left - wrapBox.left + markBox.width * 0.495 - node / 2
+    const rootY = markBox.top - wrapBox.top + markBox.height * 0.893 - node / 2
+    tracer.style.transition = `left 0.55s ${ease}, top 0.55s ${ease}, width 0.55s ${ease}, height 0.55s ${ease}`
+    tracer.style.width = `${node}px`
+    tracer.style.height = `${node}px`
+    tracer.style.left = `${rootX}px`
+    tracer.style.top = `${rootY}px`
+    await wait(560)
+
+    tracer.style.transition = `transform 0.28s ${ease}, opacity 0.28s ease`
+    tracer.style.transform = 'scale(0.2)'
+    tracer.style.opacity = '0'
+    await wait(220)
+    if (spark) {
+      spark.classList.remove('is-lit')
+      void spark.offsetWidth
+      spark.classList.add('is-lit')
+    }
+    await wait(1150)
+    tracer.classList.remove('is-on', 'is-round')
+    tracer.style.transform = ''
+    tracer.style.opacity = ''
+    tracer.style.borderRadius = ''
+    if (spark) spark.classList.remove('is-lit')
+    lockup.classList.remove('is-orbiting')
+    lockup.classList.add('is-rest')
+  }
+
   const run = async () => {
     lockup.classList.add('is-typing')
     showLetters(0)
     void clip.offsetWidth
-    spin()
     for (let i = 1; i <= letterNodes.length; i += 1) {
-      showLetters(i)
-      await wait(170)
-    }
-    await wait(560)
-    spin()
-    await wait(280)
-    lockup.classList.add('is-erasing')
-    for (let i = letterNodes.length - 1; i >= 0; i -= 1) {
       showLetters(i)
       await wait(150)
     }
-    await wait(220)
-    lockup.classList.remove('is-typing', 'is-erasing')
-    lockup.classList.add('is-rest')
-    mark.classList.remove('is-spinning')
+    await wait(640)
+    lockup.classList.add('is-erasing')
+    for (let i = letterNodes.length - 1; i >= 1; i -= 1) {
+      showLetters(i)
+      await wait(150)
+    }
+    await wait(120)
+    await sparkMark()
   }
   run()
 }
