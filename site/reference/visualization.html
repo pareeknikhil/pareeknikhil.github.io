@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualization · Ability</title>
+  <link rel="icon" href="../assets/Ability_Logomark.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="../assets/ability-look.css">
+  <script>
+    if (localStorage.getItem("ability-hue-mode") === "dusk") {
+      document.documentElement.classList.add("dusk-ink");
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-leap" href="#folio-stage">Skip to content</a>
+  <div class="spine-brand" aria-hidden="true"></div>
+  <header class="instrument-bar">
+    <a class="mark-lockup" href="../index.html" aria-label="Ability home">
+      <img class="word-lock word-lock-dawn" src="../assets/Ability_Logo.svg" alt="Ability">
+      <img class="word-lock word-lock-dusk" src="../assets/Ability_Logo-darkmode.svg" alt="">
+      <img class="mark-only" src="../assets/Ability_Logomark.svg" alt="">
+    </a>
+    <nav class="lane-cluster" aria-label="Primary">
+      <a class="lane-pill" href="../index.html">Home</a>
+      <a class="lane-pill" href="../guide/index.html">Docs</a>
+      <a class="lane-pill is-awake" href="index.html">Reference</a>
+      <a class="lane-pill" href="../blog/index.html">Blog</a>
+      <a class="lane-pill" href="../community/index.html">Community</a>
+      <a class="lane-pill" href="../about/index.html">About Us</a>
+    </nav>
+    <div class="tool-cluster">
+      <button class="orb-btn" id="seek-orb" type="button" hidden aria-label="Search pages">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="M20 20l-3.2-3.2"></path>
+        </svg>
+      </button>
+      <button class="orb-btn" id="hue-switch" type="button" aria-label="Toggle dark mode">◐</button>
+      <a class="orb-btn" id="github-orb" href="https://github.com/YOUR_GITHUB/ability" target="_blank" rel="noopener noreferrer" aria-label="Ability on GitHub">
+        <svg viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+        </svg>
+      </a>
+    </div>
+  </header>
+  <main class="folio-shell">
+    <aside class="child-rail" aria-label="Reference pages">
+      <!-- <a class="rail-home" href="index.html">Reference</a> -->
+            <nav>
+      <div class="rail-branch">
+        <div class="rail-row">
+          <button class="rail-fold" type="button" aria-label="Expand API overview" aria-expanded="false"></button>
+          <a href="api-overview.html">API overview</a>
+        </div>
+        <div class="rail-leaves">
+          <div class="rail-twig">
+            <a href="api-overview.html#open-a-session">Open a session</a>
+            <div class="rail-buds">
+              <a href="api-overview.html#construct">Open a session</a>
+              <a href="api-overview.html#stream">Build sample paths</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="api-overview.html#markers-and-files">Markers and files</a>
+            <div class="rail-buds">
+              <a href="api-overview.html#insert-markers">Insert markers</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rail-branch">
+        <div class="rail-row">
+          <button class="rail-fold" type="button" aria-label="Expand Core" aria-expanded="false"></button>
+          <a href="core.html">Core</a>
+        </div>
+        <div class="rail-leaves">
+          <div class="rail-twig">
+            <a href="core.html#package-install">Package install</a>
+            <div class="rail-buds">
+              <a href="core.html#install-from-a-package-index">Install from a package index</a>
+              <a href="core.html#install-optional-extras">Install optional extras</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="core.html#environment-checks">Environment checks</a>
+            <div class="rail-buds">
+              <a href="core.html#probe-the-install">Probe the install</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rail-branch">
+        <div class="rail-row">
+          <button class="rail-fold" type="button" aria-label="Expand Processing" aria-expanded="false"></button>
+          <a href="processing.html">Processing</a>
+        </div>
+        <div class="rail-leaves">
+          <div class="rail-twig">
+            <a href="processing.html#from-source">From source</a>
+            <div class="rail-buds">
+              <a href="processing.html#clone-and-build">Clone and build</a>
+              <a href="processing.html#build-a-wheel">Build a wheel</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="processing.html#bindings">Bindings</a>
+            <div class="rail-buds">
+              <a href="processing.html#java-binding">Java binding</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rail-branch">
+        <div class="rail-row">
+          <button class="rail-fold" type="button" aria-label="Expand Features" aria-expanded="false"></button>
+          <a href="features.html">Features</a>
+        </div>
+        <div class="rail-leaves">
+          <div class="rail-twig">
+            <a href="features.html#python-samples">Python samples</a>
+            <div class="rail-buds">
+              <a href="features.html#get-data-from-a-session">Get data from a session</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="features.html#other-languages">Other languages</a>
+            <div class="rail-buds">
+              <a href="features.html#window-a-session">Get data from a session</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rail-branch">
+        <div class="rail-row">
+          <button class="rail-fold" type="button" aria-label="Expand Visualization" aria-expanded="false"></button>
+          <a href="visualization.html">Visualization</a>
+        </div>
+        <div class="rail-leaves">
+          <div class="rail-twig">
+            <a href="visualization.html#clean-and-plot">Clean and plot</a>
+            <div class="rail-buds">
+              <a href="visualization.html#clean-a-folder-of-files">Clean a folder of files</a>
+              <a href="visualization.html#plot-a-dashboard">Plot a dashboard</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="visualization.html#features-and-windows">Features and windows</a>
+            <div class="rail-buds">
+              <a href="visualization.html#extract-features">Extract features</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </nav>
+    </aside>
+    <div class="folio-layout">
+    <article class="folio-stage" id="folio-stage">
+        <p class="crumb-path"><a href="index.html">Reference</a><span aria-hidden="true">/</span>Visualization</p>
+        <h1>Visualization</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. This module visualizes individual files or batches.</p>
+      <h2 id="dashboard">Automated mode</h2>
+      <div class="well-of-code"><button class="copy-chip" type="button">copy</button><pre><code>def plot_dashboard(path_names: dict, column_name: str, sampling_rate: float = 1000.0, units: str = 'mV', auto_run: bool = True)</code></pre></div>
+      <table>
+        <thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>path_names</code></td><td>dict</td><td>Lorem ipsum dolor sit amet.</td></tr>
+          <tr><td><code>column_name</code></td><td>str</td><td>Consectetur adipiscing elit.</td></tr>
+          <tr><td><code>sampling_rate</code></td><td>float</td><td>Sed do eiusmod tempor. Default is <code>1000.0</code>.</td></tr>
+          <tr><td><code>units</code></td><td>str</td><td>Ut labore et dolore. Default is <code>mV</code>.</td></tr>
+        </tbody>
+      </table>
+      <h2 id="example">Manual mode</h2>
+      <div class="well-of-code"><button class="copy-chip" type="button">copy</button><pre><code>path_names = ability.make_paths()
+ability.make_sample_data(path_names)
+ability.clean_signals(path_names, sampling_rate=2000)
+ability.plot_dashboard(path_names, 'channel_a', units='mV')</code></pre></div>
+      <h2 id="clean-and-plot">Clean and plot</h2>
+      <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Lorem ipsum dolor sit amet.</p>
+      <p>To run some of the samples below, you may also want:</p>
+      <ul class="need-list"><li>matplotlib</li></ul>
+      <h3 id="clean-a-folder-of-files">Clean a folder of files</h3>
+      <div class="well-of-code"><button class="copy-chip" type="button">copy</button><pre><code>import ability as ab
+
+paths = ab.make_paths()
+ab.plot_dashboard(paths, "channel_a", "mV")</code></pre></div>
+      <h3 id="plot-a-dashboard">Plot a dashboard</h3>
+      <div class="well-of-code"><button class="copy-chip" type="button">copy</button><pre><code>import ability as ab
+
+data = ab.read_file("trial.csv")
+ab.plot_trace(data, sampling_rate=250, channel=0)</code></pre></div>
+      <h2 id="features-and-windows">Features and windows</h2>
+      <p>Vestibulum id ligula porta felis euismod semper. Maecenas faucibus mollis interdum.</p>
+      <h3 id="extract-features">Extract features</h3>
+      <div class="well-of-code"><button class="copy-chip" type="button">copy</button><pre><code>import ability as ab
+
+paths = ab.make_paths()
+ab.plot_dashboard(paths, "channel_a", "mV", save_as="dashboard.png")</code></pre></div>
+    </article>
+    </div>
+  </main>
+  <footer class="colophon-band">
+    <div class="colophon-legal">
+      <img src="../assets/Ability_Logomark.svg" alt="" width="36" height="36">
+      <p>© Copyright 2026, Ability</p>
+    </div>
+    <div class="colophon-copy">
+                  <p>Site created by <a class="footer-link" target="_blank" href="https://www.linkedin.com/in/pareeknikhil/">Nikhil Pareek</a> and <a class="footer-link" target="_blank" href="https://www.linkedin.com/in/prnvkhndlwl/">Dr. Pranav Khandelwal</a></p>
+
+      <p>Site developed by Titiksha Bhardwaj</p>
+    </div>
+  </footer>
+  <div class="seek-veil" id="seek-veil">
+    <div class="seek-panel" role="dialog" aria-label="Search">
+      <input id="seek-field" type="search" placeholder="Search pages…" autocomplete="off">
+      <ul class="seek-hits"></ul>
+    </div>
+  </div>
+  <script type="module" src="../assets/ability-ui.js"></script>
+</body>
+</html>

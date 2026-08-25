@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supported Boards · Ability</title>
+  <link rel="icon" href="../assets/Ability_Logomark.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="../assets/ability-look.css">
+  <script>
+    if (localStorage.getItem("ability-hue-mode") === "dusk") {
+      document.documentElement.classList.add("dusk-ink");
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-leap" href="#folio-stage">Skip to content</a>
+  <div class="spine-brand" aria-hidden="true"></div>
+  <header class="instrument-bar">
+    <a class="mark-lockup" href="../index.html" aria-label="Ability home">
+      <img class="word-lock word-lock-dawn" src="../assets/Ability_Logo.svg" alt="Ability">
+      <img class="word-lock word-lock-dusk" src="../assets/Ability_Logo-darkmode.svg" alt="">
+      <img class="mark-only" src="../assets/Ability_Logomark.svg" alt="">
+    </a>
+    <nav class="lane-cluster" aria-label="Primary">
+      <a class="lane-pill" href="../index.html">Home</a>
+      <a class="lane-pill is-awake" href="index.html">Docs</a>
+      <a class="lane-pill" href="../reference/index.html">Reference</a>
+      <a class="lane-pill" href="../blog/index.html">Blog</a>
+      <a class="lane-pill" href="../community/index.html">Community</a>
+      <a class="lane-pill" href="../about/index.html">About Us</a>
+    </nav>
+    <div class="tool-cluster">
+      <button class="orb-btn" id="seek-orb" type="button" hidden aria-label="Search pages">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="M20 20l-3.2-3.2"></path>
+        </svg>
+      </button>
+      <button class="orb-btn" id="hue-switch" type="button" aria-label="Toggle dark mode">◐</button>
+      <a class="orb-btn" id="github-orb" href="https://github.com/YOUR_GITHUB/ability" target="_blank" rel="noopener noreferrer" aria-label="Ability on GitHub">
+        <svg viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+        </svg>
+      </a>
+    </div>
+  </header>
+  <main class="folio-shell">
+    <aside class="child-rail" aria-label="Guide pages">
+      <!-- <a class="rail-home" href="index.html">Docs</a> -->
+      <nav>
+      <div class="rail-branch">
+        <div class="rail-row">
+          <button class="rail-fold" type="button" aria-label="Expand Supported Boards" aria-expanded="false"></button>
+          <a href="getting-started.html">Supported Boards</a>
+        </div>
+        <div class="rail-leaves">
+          <div class="rail-twig">
+            <a href="getting-started.html#dummy-boards">Ability Dummy Boards</a>
+            <div class="rail-buds">
+              <a href="getting-started.html#playback-file-board">Playback File Board</a>
+              <a href="getting-started.html#streaming-board">Streaming Board</a>
+              <a href="getting-started.html#synthetic-board">Synthetic Board</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="getting-started.html#openbci">OpenBCI</a>
+            <div class="rail-buds">
+              <a href="getting-started.html#galea">Galea</a>
+              <a href="getting-started.html#cyton">Cyton</a>
+              <a href="getting-started.html#ganglion-native">Ganglion Native</a>
+              <a href="getting-started.html#cyton-daisy">Cyton Daisy</a>
+              <a href="getting-started.html#ganglion-with-wifi-shield">Ganglion with WIFI Shield</a>
+              <a href="getting-started.html#cyton-with-wifi-shield">Cyton with WIFI Shield</a>
+              <a href="getting-started.html#cytondaisy-with-wifi-shield">CytonDaisy with WIFI Shield</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="getting-started.html#neuromd">NeuroMD</a>
+            <div class="rail-buds">
+              <a href="getting-started.html#brainbit">BrainBit</a>
+              <a href="getting-started.html#callibri-yellow">Callibri(Yellow)</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="getting-started.html#g-tec">G.TEC</a>
+            <div class="rail-buds">
+              <a href="getting-started.html#unicorn">Unicorn</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="getting-started.html#neurosity">Neurosity</a>
+            <div class="rail-buds">
+              <a href="getting-started.html#notion-1">Notion 1</a>
+              <a href="getting-started.html#notion-2">Notion 2</a>
+              <a href="getting-started.html#crown">Crown</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="getting-started.html#oymotion">OYMotion</a>
+            <div class="rail-buds">
+              <a href="getting-started.html#gforcepro-armband">gForcePro ArmBand</a>
+              <a href="getting-started.html#gforcedual-armband">gForceDual ArmBand</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="getting-started.html#freeeeg">FreeEEG</a>
+            <div class="rail-buds">
+              <a href="getting-started.html#freeeeg32">FreeEEG32</a>
+              <a href="getting-started.html#freeeeg128">FreeEEG128</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="getting-started.html#muse">Muse</a>
+            <div class="rail-buds">
+              <a href="getting-started.html#muse-s">Muse S</a>
+              <a href="getting-started.html#muses-athena">MuseS Athena</a>
+              <a href="getting-started.html#muse-2">Muse 2</a>
+              <a href="getting-started.html#muse-2016">Muse 2016</a>
+            </div>
+          </div>
+          <a href="getting-started.html#ant-neuro">Ant Neuro</a>
+          <div class="rail-twig">
+            <a href="getting-started.html#enophone">Enophone</a>
+            <div class="rail-buds">
+              <a href="getting-started.html#enophone-headphones">Enophone Headphones</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="getting-started.html#brainalive">BrainAlive</a>
+            <div class="rail-buds">
+              <a href="getting-started.html#brainalive-device">BrainAlive Device</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="getting-started.html#mentalab">Mentalab</a>
+            <div class="rail-buds">
+              <a href="getting-started.html#explore-4-channels-board">Explore 4 Channels Board</a>
+              <a href="getting-started.html#explore-8-channels-board">Explore 8 Channels Board</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="getting-started.html#emotibit">EmotiBit</a>
+            <div class="rail-buds">
+              <a href="getting-started.html#emotibit-board">EmotiBit board</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="getting-started.html#pieeg">PiEEG</a>
+            <div class="rail-buds">
+              <a href="getting-started.html#pieeg-board">PiEEG Board</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="getting-started.html#neuropawn">NeuroPawn</a>
+            <div class="rail-buds">
+              <a href="getting-started.html#knight-board">Knight Board</a>
+              <a href="getting-started.html#knight-imu-board">Knight IMU Board</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="getting-started.html#biolistener">BioListener</a>
+            <div class="rail-buds">
+              <a href="getting-started.html#biolistener-device">BioListener</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="getting-started.html#ironbci">IronBCI</a>
+            <div class="rail-buds">
+              <a href="getting-started.html#ironbci32">IronBCI32</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rail-branch">
+        <div class="rail-row">
+          <button class="rail-fold" type="button" aria-label="Expand Installation Instructions" aria-expanded="false"></button>
+          <a href="installation.html">Installation Instructions</a>
+        </div>
+        <div class="rail-leaves">
+          <a href="installation.html#package-managers">Precompiled libraries in package managers(Nuget, PYPI, etc)</a>
+          <a href="installation.html#python">Python</a>
+          <a href="installation.html#csharp">C#</a>
+          <a href="installation.html#r">R</a>
+          <a href="installation.html#java">Java</a>
+          <a href="installation.html#matlab">Matlab</a>
+          <a href="installation.html#julia">Julia</a>
+          <a href="installation.html#typescript">Typescript</a>
+          <a href="installation.html#rust">Rust</a>
+          <a href="installation.html#swift">Swift</a>
+          <a href="installation.html#docker-image">Docker Image</a>
+          <div class="rail-twig">
+            <a href="installation.html#compile-core">Compilation of Core Module and C++ Binding</a>
+            <div class="rail-buds">
+              <a href="installation.html#windows">Windows</a>
+              <a href="installation.html#linux">Linux</a>
+              <a href="installation.html#macos">MacOS</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="installation.html#android">Android</a>
+            <div class="rail-buds">
+              <a href="installation.html#android-install">Installation instructions</a>
+              <a href="installation.html#android-ndk">Compilation using Android NDK</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rail-branch">
+        <div class="rail-row">
+          <button class="rail-fold" type="button" aria-label="Expand User API" aria-expanded="false"></button>
+          <a href="compilation.html">User API</a>
+        </div>
+        <div class="rail-leaves">
+          <div class="rail-twig">
+            <a href="compilation.html#python-api-reference">Python API Reference</a>
+            <div class="rail-buds">
+              <a href="compilation.html#ability-session">ability.session</a>
+              <a href="compilation.html#ability-exit-codes">ability.exit_codes</a>
+              <a href="compilation.html#ability-data-filter">ability.data_filter</a>
+              <a href="compilation.html#ability-ml-model">ability.ml_model</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="compilation.html#cpp-api-reference">C++ API Reference</a>
+            <div class="rail-buds">
+              <a href="compilation.html#session-class">Session class</a>
+              <a href="compilation.html#datafilter-class">DataFilter class</a>
+              <a href="compilation.html#mlmodel-class">MLModel class</a>
+              <a href="compilation.html#ability-constants">Ability constants</a>
+            </div>
+          </div>
+          <a href="compilation.html#java-api-reference">Java API Reference</a>
+          <a href="compilation.html#csharp-api-reference">C# API Reference</a>
+          <a href="compilation.html#r-api-reference">R API Reference</a>
+          <a href="compilation.html#matlab-api-reference">Matlab API Reference</a>
+          <a href="compilation.html#julia-api-reference">Julia API Reference</a>
+          <a href="compilation.html#rust-api-reference">Rust API Reference</a>
+          <a href="compilation.html#typescript-api-reference">Typescript API Reference</a>
+          <a href="compilation.html#swift-api">Swift</a>
+        </div>
+      </div>
+      <div class="rail-branch">
+        <div class="rail-row">
+          <button class="rail-fold" type="button" aria-label="Expand Data Format Description" aria-expanded="false"></button>
+          <a href="pipeline.html">Data Format Description</a>
+        </div>
+        <div class="rail-leaves">
+          <a href="pipeline.html#units-of-measure">Units of Measure</a>
+          <a href="pipeline.html#ability-presets">Ability Presets</a>
+          <div class="rail-twig">
+            <a href="pipeline.html#generic-format-description">Generic Format Description</a>
+            <div class="rail-buds">
+              <a href="pipeline.html#device-channels">Getting All Info About Device And Supported Channels</a>
+            </div>
+          </div>
+          <a href="pipeline.html#other-channels">Other Channels</a>
+        </div>
+      </div>
+      <div class="rail-branch">
+        <div class="rail-row">
+          <button class="rail-fold" type="button" aria-label="Expand Code Samples" aria-expanded="false"></button>
+          <a href="examples.html">Code Samples</a>
+        </div>
+        <div class="rail-leaves">
+          <div class="rail-twig">
+            <a href="examples.html#python">Python</a>
+            <div class="rail-buds">
+              <a href="examples.html#python-get-data-from-a-board">Python Get Data from a Board</a>
+              <a href="examples.html#python-markers">Python Markers</a>
+              <a href="examples.html#python-read-write-file">Python Read Write File</a>
+              <a href="examples.html#python-downsample-data">Python Downsample Data</a>
+              <a href="examples.html#python-transforms">Python Transforms</a>
+              <a href="examples.html#python-signal-filtering">Python Signal Filtering</a>
+              <a href="examples.html#python-denoising">Python Denoising</a>
+              <a href="examples.html#python-mne-integration">Python MNE Integration</a>
+              <a href="examples.html#python-band-power">Python Band Power</a>
+              <a href="examples.html#python-eeg-metrics">Python EEG Metrics</a>
+              <a href="examples.html#python-ica">Python ICA</a>
+              <a href="examples.html#python-real-time-plot">Python Real Time Plot</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="examples.html#java">Java</a>
+            <div class="rail-buds">
+              <a href="examples.html#java-get-data-from-a-board">Java Get Data from a Board</a>
+              <a href="examples.html#java-markers">Java Markers</a>
+              <a href="examples.html#java-read-write-file">Java Read Write File</a>
+              <a href="examples.html#java-downsample-data">Java Downsample Data</a>
+              <a href="examples.html#java-transforms">Java Transforms</a>
+              <a href="examples.html#java-signal-filtering">Java Signal Filtering</a>
+              <a href="examples.html#java-denoising">Java Denoising</a>
+              <a href="examples.html#java-band-power">Java Band Power</a>
+              <a href="examples.html#java-eeg-metrics">Java EEG Metrics</a>
+              <a href="examples.html#java-ica">Java ICA</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="examples.html#csharp">C#</a>
+            <div class="rail-buds">
+              <a href="examples.html#csharp-read-data-from-a-board">C# Read Data from a Board</a>
+              <a href="examples.html#csharp-markers">C# Markers</a>
+              <a href="examples.html#csharp-read-write-file">C# Read Write File</a>
+              <a href="examples.html#csharp-downsample-data">C# Downsample Data</a>
+              <a href="examples.html#csharp-transforms">C# Transforms</a>
+              <a href="examples.html#csharp-signal-filtering">C# Signal Filtering</a>
+              <a href="examples.html#csharp-denoising">C# Denoising</a>
+              <a href="examples.html#csharp-band-power">C# Band Power</a>
+              <a href="examples.html#csharp-eeg-metrics">C# EEG Metrics</a>
+              <a href="examples.html#csharp-ica">C# ICA</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="examples.html#cpp">C++</a>
+            <div class="rail-buds">
+              <a href="examples.html#cmake-file-example">CMake File Example</a>
+              <a href="examples.html#cpp-read-data-from-a-board">C++ Read Data from a Board</a>
+              <a href="examples.html#cpp-markers">C++ Markers</a>
+              <a href="examples.html#cpp-read-write-file">C++ Read Write File</a>
+              <a href="examples.html#cpp-downsample-data">C++ Downsample Data</a>
+              <a href="examples.html#cpp-transforms">C++ Transforms</a>
+              <a href="examples.html#cpp-signal-filtering">C++ Signal Filtering</a>
+              <a href="examples.html#cpp-denoising">C++ Denoising</a>
+              <a href="examples.html#cpp-band-power">C++ Band Power</a>
+              <a href="examples.html#cpp-eeg-metrics">C++ EEG Metrics</a>
+              <a href="examples.html#cpp-ica">C++ ICA</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="examples.html#r">R</a>
+            <div class="rail-buds">
+              <a href="examples.html#r-get-data-from-a-board">R Get Data from a Board</a>
+              <a href="examples.html#r-read-write-file">R Read Write File</a>
+              <a href="examples.html#r-transforms">R Transforms</a>
+              <a href="examples.html#r-signal-filtering">R Signal Filtering</a>
+              <a href="examples.html#r-denoising">R Denoising</a>
+              <a href="examples.html#r-band-power">R Band Power</a>
+              <a href="examples.html#r-eeg-metrics">R EEG Metrics</a>
+              <a href="examples.html#r-ica">R ICA</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="examples.html#matlab">Matlab</a>
+            <div class="rail-buds">
+              <a href="examples.html#matlab-get-data-from-a-board">Matlab Get Data from a Board</a>
+              <a href="examples.html#matlab-markers">Matlab Markers</a>
+              <a href="examples.html#matlab-read-write-file">Matlab Read Write File</a>
+              <a href="examples.html#matlab-transforms">Matlab Transforms</a>
+              <a href="examples.html#matlab-signal-filtering">Matlab Signal Filtering</a>
+              <a href="examples.html#matlab-denoising">Matlab Denoising</a>
+              <a href="examples.html#matlab-band-power">Matlab Band Power</a>
+              <a href="examples.html#matlab-eeg-metrics">Matlab EEG Metrics</a>
+              <a href="examples.html#matlab-ica">Matlab ICA</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="examples.html#julia">Julia</a>
+            <div class="rail-buds">
+              <a href="examples.html#julia-get-data-from-a-board">Julia Get Data from a Board</a>
+              <a href="examples.html#julia-markers">Julia Markers</a>
+              <a href="examples.html#julia-read-write-file">Julia Read Write File</a>
+              <a href="examples.html#julia-transforms">Julia Transforms</a>
+              <a href="examples.html#julia-signal-filtering">Julia Signal Filtering</a>
+              <a href="examples.html#julia-denoising">Julia Denoising</a>
+              <a href="examples.html#julia-band-power">Julia Band Power</a>
+              <a href="examples.html#julia-eeg-metrics">Julia EEG Metrics</a>
+              <a href="examples.html#julia-ica">Julia ICA</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="examples.html#rust">Rust</a>
+            <div class="rail-buds">
+              <a href="examples.html#rust-get-data-from-a-board">Rust Get Data from a Board</a>
+              <a href="examples.html#rust-markers">Rust Markers</a>
+              <a href="examples.html#rust-read-write-file">Rust Read Write File</a>
+              <a href="examples.html#rust-transforms">Rust Transforms</a>
+              <a href="examples.html#rust-signal-filtering">Rust Signal Filtering</a>
+              <a href="examples.html#rust-denoising">Rust Denoising</a>
+              <a href="examples.html#rust-band-power">Rust Band Power</a>
+              <a href="examples.html#rust-eeg-metrics">Rust EEG Metrics</a>
+              <a href="examples.html#rust-ica">Rust ICA</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="examples.html#typescript">Typescript</a>
+            <div class="rail-buds">
+              <a href="examples.html#typescript-get-data-from-a-board">Typescript Get Data from a Board</a>
+              <a href="examples.html#typescript-markers">Typescript Markers</a>
+              <a href="examples.html#typescript-read-write-file">Typescript Read Write File</a>
+              <a href="examples.html#typescript-downsample-data">Typescript Downsample Data</a>
+              <a href="examples.html#typescript-transforms">Typescript Transforms</a>
+              <a href="examples.html#typescript-signal-filtering">Typescript Signal Filtering</a>
+              <a href="examples.html#typescript-denoising">Typescript Denoising</a>
+              <a href="examples.html#typescript-band-power">Typescript Band Power</a>
+              <a href="examples.html#typescript-eeg-metrics">Typescript EEG Metrics</a>
+              <a href="examples.html#typescript-ica">Typescript ICA</a>
+            </div>
+          </div>
+          <div class="rail-twig">
+            <a href="examples.html#swift">Swift</a>
+            <div class="rail-buds">
+              <a href="examples.html#swift-get-data-from-a-board">Swift Get Data from a Board</a>
+              <a href="examples.html#swift-markers">Swift Markers</a>
+              <a href="examples.html#swift-read-write-file">Swift Read Write File</a>
+              <a href="examples.html#swift-downsample-data">Swift Downsample Data</a>
+              <a href="examples.html#swift-transforms">Swift Transforms</a>
+              <a href="examples.html#swift-signal-filtering">Swift Signal Filtering</a>
+              <a href="examples.html#swift-denoising">Swift Denoising</a>
+              <a href="examples.html#swift-band-power">Swift Band Power</a>
+              <a href="examples.html#swift-eeg-metrics">Swift EEG Metrics</a>
+              <a href="examples.html#swift-ica">Swift ICA</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rail-branch">
+        <div class="rail-row">
+          <button class="rail-fold" type="button" aria-label="Expand Integration with Game Engines" aria-expanded="false"></button>
+          <a href="engines.html">Integration with Game Engines</a>
+        </div>
+        <div class="rail-leaves">
+          <div class="rail-twig">
+            <a href="engines.html#unity">Unity</a>
+            <div class="rail-buds">
+              <a href="engines.html#unity-setup">Setup</a>
+              <a href="engines.html#unity-examples">Examples</a>
+              <a href="engines.html#unity-fixing-errors">Fixing errors</a>
+            </div>
+          </div>
+          <a href="engines.html#unreal-engine">Unreal Engine</a>
+          <a href="engines.html#cryengine">CryEngine</a>
+        </div>
+      </div>
+      <div class="rail-branch">
+        <div class="rail-row">
+          <button class="rail-fold" type="button" aria-label="Expand Ability Dev" aria-expanded="false"></button>
+          <a href="develop.html">Ability Dev</a>
+        </div>
+        <div class="rail-leaves">
+          <a href="develop.html#navigation">Navigation</a>
+          <a href="develop.html#code-style">Code style</a>
+          <a href="develop.html#ci-and-tests">CI and tests</a>
+          <a href="develop.html#pull-requests">Pull Requests</a>
+          <a href="develop.html#add-new-boards">Instructions to add new boards to Ability</a>
+          <a href="develop.html#build-docs-locally">Instructions to build docs locally</a>
+          <a href="develop.html#debug-errors">Debug Ability’s errors</a>
+          <a href="develop.html#ability-emulator">Ability Emulator</a>
+          <a href="develop.html#contributors">Contributors</a>
+        </div>
+      </div>
+      <div class="rail-branch">
+        <div class="rail-row">
+          <button class="rail-fold" type="button" aria-label="Expand Ask Help" aria-expanded="false"></button>
+          <a href="help.html">Ask Help</a>
+        </div>
+        <div class="rail-leaves">
+          <a href="help.html#contact-info">Contact Info, Feature Requests, Issues</a>
+          <a href="help.html#issue-format">Issue format</a>
+        </div>
+      </div>
+      </nav>
+    </aside>
+    <div class="folio-layout">
+    <article class="folio-stage" id="folio-stage">
+        <p class="crumb-path"><a href="index.html">Docs</a><span aria-hidden="true">/</span>Supported Boards</p>
+        <h1>Supported Boards</h1>
+        <p class="lede-line">Ability talks to demo sources and hardware through one session API, so application code stays device-agnostic.</p>
+      <h2 id="dummy-boards">Ability Dummy Boards</h2>
+      <p>These virtual sources use the same Session calls as hardware. Reach for them in CI and when you are writing application code before a headset is on the desk.</p>
+      <h3 id="playback-file-board">Playback File Board</h3>
+      <p>Replay a recorded table as if it were a live stream. Point the session at a CSV or binary capture, then prepare, start, and read as usual.</p>
+<div class="well-of-code"><button class="copy-chip" type="button">copy</button><pre><code>session = ab.Session(device=&quot;playback&quot;, file=&quot;trial.csv&quot;)
+session.prepare()
+session.start()
+data = session.read()
+session.stop()</code></pre></div>
+      <h3 id="streaming-board">Streaming Board</h3>
+      <p>Pull samples from another Ability process over TCP. Useful when acquisition runs on one machine and analysis on another.</p>
+<div class="well-of-code"><button class="copy-chip" type="button">copy</button><pre><code>session = ab.Session(device=&quot;streaming&quot;, host=&quot;127.0.0.1&quot;, port=&quot;6677&quot;)
+session.prepare()
+session.start()</code></pre></div>
+      <h3 id="synthetic-board">Synthetic Board</h3>
+      <p>Generate a stable sine-like trace so filters and plots have something to chew on without a device attached.</p>
+<div class="well-of-code"><button class="copy-chip" type="button">copy</button><pre><code>session = ab.Session(device=&quot;synthetic&quot;)
+session.prepare()
+session.start()
+print(session.read(n_samples=256).shape)</code></pre></div>
+      <h2 id="openbci">OpenBCI</h2>
+      <p>Open a session with the matching device id for Cyton, Ganglion, Galea, or a WiFi shield variant. Channel counts follow the device profile.</p>
+      <h3 id="galea">Galea</h3>
+      <p>Galea uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="cyton">Cyton</h3>
+      <p>Cyton uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="ganglion-native">Ganglion Native</h3>
+      <p>Ganglion Native uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="cyton-daisy">Cyton Daisy</h3>
+      <p>Cyton Daisy uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="ganglion-with-wifi-shield">Ganglion with WIFI Shield</h3>
+      <p>Ganglion with WIFI Shield uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="cyton-with-wifi-shield">Cyton with WIFI Shield</h3>
+      <p>Cyton with WIFI Shield uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="cytondaisy-with-wifi-shield">CytonDaisy with WIFI Shield</h3>
+      <p>CytonDaisy with WIFI Shield uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h2 id="neuromd">NeuroMD</h2>
+      <p>NeuroMD uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="brainbit">BrainBit</h3>
+      <p>BrainBit uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="callibri-yellow">Callibri(Yellow)</h3>
+      <p>Callibri(Yellow) uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h2 id="g-tec">G.TEC</h2>
+      <p>G.TEC uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="unicorn">Unicorn</h3>
+      <p>Unicorn uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h2 id="neurosity">Neurosity</h2>
+      <p>Neurosity uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="notion-1">Notion 1</h3>
+      <p>Notion 1 uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="notion-2">Notion 2</h3>
+      <p>Notion 2 uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="crown">Crown</h3>
+      <p>Crown uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h2 id="oymotion">OYMotion</h2>
+      <p>OYMotion uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="gforcepro-armband">gForcePro ArmBand</h3>
+      <p>gForcePro ArmBand uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="gforcedual-armband">gForceDual ArmBand</h3>
+      <p>gForceDual ArmBand uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h2 id="freeeeg">FreeEEG</h2>
+      <p>FreeEEG uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="freeeeg32">FreeEEG32</h3>
+      <p>FreeEEG32 uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="freeeeg128">FreeEEG128</h3>
+      <p>FreeEEG128 uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h2 id="muse">Muse</h2>
+      <p>Muse uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="muse-s">Muse S</h3>
+      <p>Muse S uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="muses-athena">MuseS Athena</h3>
+      <p>MuseS Athena uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="muse-2">Muse 2</h3>
+      <p>Muse 2 uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="muse-2016">Muse 2016</h3>
+      <p>Muse 2016 uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h2 id="ant-neuro">Ant Neuro</h2>
+      <p>Ant Neuro uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h2 id="enophone">Enophone</h2>
+      <p>Enophone uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="enophone-headphones">Enophone Headphones</h3>
+      <p>Enophone Headphones uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h2 id="brainalive">BrainAlive</h2>
+      <p>BrainAlive uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="brainalive-device">BrainAlive Device</h3>
+      <p>BrainAlive Device uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h2 id="mentalab">Mentalab</h2>
+      <p>Mentalab uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="explore-4-channels-board">Explore 4 Channels Board</h3>
+      <p>Explore 4 Channels Board uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="explore-8-channels-board">Explore 8 Channels Board</h3>
+      <p>Explore 8 Channels Board uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h2 id="emotibit">EmotiBit</h2>
+      <p>EmotiBit uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="emotibit-board">EmotiBit board</h3>
+      <p>EmotiBit board uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h2 id="pieeg">PiEEG</h2>
+      <p>PiEEG uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="pieeg-board">PiEEG Board</h3>
+      <p>PiEEG Board uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h2 id="neuropawn">NeuroPawn</h2>
+      <p>NeuroPawn uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="knight-board">Knight Board</h3>
+      <p>Knight Board uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="knight-imu-board">Knight IMU Board</h3>
+      <p>Knight IMU Board uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h2 id="biolistener">BioListener</h2>
+      <p>BioListener uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="biolistener-device">BioListener</h3>
+      <p>BioListener uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h2 id="ironbci">IronBCI</h2>
+      <p>IronBCI uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 id="ironbci32">IronBCI32</h3>
+      <p>IronBCI32 uses the same Ability session flow: construct with a device id, prepare, start, read a block, then stop. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </article>
+    </div>
+  </main>
+  <footer class="colophon-band">
+    <div class="colophon-legal">
+      <img src="../assets/Ability_Logomark.svg" alt="" width="36" height="36">
+      <p>© Copyright 2026, Ability</p>
+    </div>
+    <div class="colophon-copy">
+                  <p>Site created by <a class="footer-link" target="_blank" href="https://www.linkedin.com/in/pareeknikhil/">Nikhil Pareek</a> and <a class="footer-link" target="_blank" href="https://www.linkedin.com/in/prnvkhndlwl/">Dr. Pranav Khandelwal</a></p>
+
+      <p>Site developed by Titiksha Bhardwaj</p>
+    </div>
+  </footer>
+  <div class="seek-veil" id="seek-veil">
+    <div class="seek-panel" role="dialog" aria-label="Search">
+      <input id="seek-field" type="search" placeholder="Search pages…" autocomplete="off">
+      <ul class="seek-hits"></ul>
+    </div>
+  </div>
+  <script type="module" src="../assets/ability-ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A session has a life · Ability</title>
+  <link rel="icon" href="../assets/Ability_Logomark.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="../assets/ability-look.css">
+  <script>
+    if (localStorage.getItem("ability-hue-mode") === "dusk") {
+      document.documentElement.classList.add("dusk-ink");
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-leap" href="#folio-stage">Skip to content</a>
+  <div class="spine-brand" aria-hidden="true"></div>
+  <header class="instrument-bar">
+    <a class="mark-lockup" href="../index.html" aria-label="Ability home">
+      <img class="word-lock word-lock-dawn" src="../assets/Ability_Logo.svg" alt="Ability">
+      <img class="word-lock word-lock-dusk" src="../assets/Ability_Logo-darkmode.svg" alt="">
+      <img class="mark-only" src="../assets/Ability_Logomark.svg" alt="">
+    </a>
+    <nav class="lane-cluster" aria-label="Primary">
+      <a class="lane-pill" href="../index.html">Home</a>
+      <a class="lane-pill" href="../guide/index.html">Docs</a>
+      <a class="lane-pill" href="../reference/index.html">Reference</a>
+      <a class="lane-pill is-awake" href="index.html">Blog</a>
+      <a class="lane-pill" href="../community/index.html">Community</a>
+      <a class="lane-pill" href="../about/index.html">About Us</a>
+    </nav>
+    <div class="tool-cluster">
+      <button class="orb-btn" id="seek-orb" type="button" hidden aria-label="Search pages">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="M20 20l-3.2-3.2"></path>
+        </svg>
+      </button>
+      <button class="orb-btn" id="hue-switch" type="button" aria-label="Toggle dark mode">◐</button>
+      <a class="orb-btn" id="github-orb" href="https://github.com/YOUR_GITHUB/ability" target="_blank" rel="noopener noreferrer" aria-label="Ability on GitHub">
+        <svg viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+        </svg>
+      </a>
+    </div>
+  </header>
+  <main class="plaza-shell plaza-article" id="folio-stage">
+    <p class="crumb-path"><a href="index.html">Blog</a><span aria-hidden="true">/</span>Pipeline</p>
+    <!-- <p class="plaza-kicker">Pipeline</p> -->
+    <h1 class="plaza-title">A session has a life: prepare, start, read, stop</h1>
+    <p class="lede-line">Device lifetime belongs in one object. That is the whole idea, and it is why the same four calls show up in every Ability binding.</p>
+    <p class="article-byline">
+      <span class="byline-mark" aria-hidden="true">NP</span>
+      <span>
+        <strong>Nikhil Pareek</strong>
+        <small><time datetime="2026-08-12">12 Aug 2026</time> · 8 min</small>
+      </span>
+    </p>
+    <div class="feat-frame article-hero" aria-hidden="true"><span class="feat-wave"></span></div>
+    <div class="article-body">
+      <p>A session is not a grab bag of helpers. It is a small machine with a start and a stop. You construct it with a device id or a preset, you prepare hardware or a dummy source, you start the stream, you read blocks, and you stop. Skip a step and the next one has nothing to hold.</p>
+      <p>That shape is deliberate. Application code should not care whether the source is a synthetic board, a playback file, or a headset on the desk. The session hides that. Filters and models take tables. They never open devices.</p>
+      <h2>Four calls, one owner</h2>
+      <p>Prepare claims the device and checks that the preset still maps. Start opens the stream. Read returns a numeric block with a stable column order. Stop releases the device even if the rest of your script has already thrown.</p>
+      <div class="well-of-code"><button class="copy-chip" type="button">copy</button><pre><code>import ability as ab
+
+session = ab.Session(device_id=0)
+session.prepare()
+session.start()
+block = session.read(n_samples=256)
+session.stop()</code></pre></div>
+      <h2>Why this survives a rewrite</h2>
+      <p>When you move from a notebook to a game engine, you keep the same lifecycle. The language changes. The owner does not. That is the contract Reference documents and Docs walks through in samples.</p>
+      <p>If you need markers, insert them on the live session, not on a copy of the table after the fact. File round-trips keep extra columns so playback can still find them.</p>
+    </div>
+    <p class="article-back"><a href="index.html">← All notes</a></p>
+  </main>
+  <footer class="colophon-band">
+    <div class="colophon-legal">
+      <img src="../assets/Ability_Logomark.svg" alt="" width="36" height="36">
+      <p>© Copyright 2026, Ability</p>
+    </div>
+    <div class="colophon-copy">
+                  <p>Site created by <a class="footer-link" target="_blank" href="https://www.linkedin.com/in/pareeknikhil/">Nikhil Pareek</a> and <a class="footer-link" target="_blank" href="https://www.linkedin.com/in/prnvkhndlwl/">Dr. Pranav Khandelwal</a></p>
+
+      <p>Site developed by Titiksha Bhardwaj</p>
+    </div>
+  </footer>
+  <div class="seek-veil" id="seek-veil">
+    <div class="seek-panel" role="dialog" aria-label="Search">
+      <input id="seek-field" type="search" placeholder="Search pages…" autocomplete="off">
+      <ul class="seek-hits"></ul>
+    </div>
+  </div>
+  <script type="module" src="../assets/ability-ui.js"></script>
+</body>
+</html>
